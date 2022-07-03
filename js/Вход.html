@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rubliuk Alex</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/my.css" type="text/css">
+	<style type="text/css">
+		.btn{background-color: #8e24aa;}
+	</style>
+	<script type="text/jscript">
+		const realPassWord="0000";
+	function checkLogin(){
+		var radio1Checked=document.getElementById('radio1').checked;
+		var radio2Checked=document.getElementById('radio2').unchecked;
+			if (radio1Checked) {
+				alert("Пароль: 0000");
+				return false;}
+			if (radio2Checked) {
+				return false;
+			}
+		var userName=document.regForm.userName.value;
+		var passWord=document.regForm.passWord.value;
+		if (userName=='') {
+			alert("Не введено ім'я користувача");
+			return false;
+		}
+		if (passWord!=realPassWord) {
+			alert("Невірний пароль");
+			return false;
+		}
+		return true;
+	}
+	</script>
+</head>
+<body bgcolor="#d6a4df">
+	<center><h1>Вхід у систему</h1><hr><br><br>
+	<form name="regForm" action="Images.html">
+		Чи знаєш пароль?<br>
+		<input type="radio" name="rd" id="radio1" value="1" checked>)
+		<label for="radio1">Неа(</label>
+		<input type="radio" name="rd" id="radio2" value="2">
+		<label for="radio2">Знаю)</label><br><br>
+		Login<br>
+		<input type="text" name="userName"><br>
+		Password<br>
+		<input type="password" name="passWord"><br><br>
+		<input type="submit" name="checkBotton" class="btn" value="Enter" onclick="return checkLogin()">
+	</form></center>
+</body>
+</html>
